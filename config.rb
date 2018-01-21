@@ -34,13 +34,15 @@ configure :development do
   activate :livereload
 end
 
-# dato.articles.each do |article|
-#   proxy(
-#     '/articles/#{article.slug}.html',
-#     '/templates/article.html',
-#     locals: { article: article }
-#   )
-# end
+dato.home
+
+dato.releases.each do |release|
+  proxy(
+    '/releases/#{release.slug}.html',
+    '/templates/release.html',
+    locals: { release: release }
+  )
+end
 
 # paginate(
 #   dato.articles.sort_by(&:published_at).reverse,
@@ -65,4 +67,3 @@ end
 #     paginate dato.articles.select{|a| a.published == true}.sort_by(&:date).reverse, "/#{I18n.locale}/articles", "/templates/articles.html", locals: { locale: I18n.locale }
 #   end
 # end
-

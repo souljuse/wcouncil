@@ -1,0 +1,6 @@
+- page = dato.home
+
+.wrap
+  div= "#{page.title}"
+  - page.releases.each do |release| 
+    div= "#{release.title}"
