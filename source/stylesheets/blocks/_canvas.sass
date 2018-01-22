@@ -1,27 +1,33 @@
 .canvas
-  position: relative
-
-  &.is-shifted
-    +position(absolute, 0px 0px 0px 0px)
-    overflow: hidden
 
 .canvas__main
-  transition: transform 0.5s $material-ease
+  height: 100vh
+  background: image-url('bg.jpg')  no-repeat
+  background-size: cover
 
-.canvas__aside
-  z-index: 2
-  overflow-y: auto
-  background-color: $light-bg-color
-  position: absolute
-  box-shadow: 0 0 0 transparent
-  top: 0
-  bottom: 0
-  transition: transform 0.5s $material-ease, box-shadow 0.5s $material-ease
+.canvas__overlay
+  display: none
+  z-index: 3
+  +position(fixed, 0 0 0 0)
 
-  .canvas.is-shifted &
-    box-shadow: 3px 0 5px rgba(#000, 0.2)
+.canvas__overlay__header
+  display: flex
+  align-items: center
+  justify-content: space-between
 
-+canvas-layout(290px)
+.canvas__overlay__close
+  color: white
+  +vertical-padding(1)
+  i
+    +font-size(delta)
 
-+at-breakpoint(lap)
-  +canvas-layout(400px)
+.canvas__overlay__nav__item
+  +vertical-margin(1)
+  a
+    color: white
+
+.canvas__overlay__nav__link
+  display: block
+  +heading-font-family
+  +padding(1)
+  +font-size(epsilon)

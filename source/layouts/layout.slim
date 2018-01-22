@@ -2,6 +2,21 @@ doctype 5
 html lang=I18n.locale
   head = partial "partials/head"
   body
+    .canvas
+      .canvas__main
+        = partial "partials/site-header"
+        = yield
+
+      .canvas__overlay
+        .wrap
+          .canvas__overlay__inner
+            .canvas__overlay__header
+              = link_to "#", class: "canvas__overlay__close js-nav-close" do
+                i.icon--cross
+
+            = partial "partials/main-nav",
+              locals: {html_class: "canvas__overlay__nav"}
+
     = yield
     = partial "partials/footer"
     = partial "partials/js_includes"

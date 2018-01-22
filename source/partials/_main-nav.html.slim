@@ -1,0 +1,13 @@
+- html_class ||= nil
+
+ul class=html_class
+  li class="#{html_class}__item"
+    = link_to "Home", "/",
+      class: "#{html_class}__link",
+      title: "Home"
+
+  / li class="#{html_class}__item"
+  /   = link_to dato.about_page.title,
+  /     "/#{I18n.locale}/#{dato.about_page.slug}",
+  /     class: "#{html_class}__link",
+  /     title: dato.about_page.title

@@ -1,0 +1,77 @@
+.site-header
+  z-index: 100
+
+.site-header--page
+  @extend .site-header
+  background-color: white
+
+.site-header__inner
+  color: white
+  display: flex
+  align-items: center
+  justify-content: space-between
+  position: relative
+
+.site-header__inner--page
+  @extend .site-header__inner
+  border-top: 5px solid $primary-color
+
+.site-header__hamburger
+  flex-basis: 20px
+  +vertical-padding(1)
+  color: white
+
+  i
+    +font-size(delta)
+    margin-top: 3px
+
+.site-header__locale-switcher
+  display: none
+  position: relative
+
+.site-header__locale-switcher__dropdown
+  position: absolute
+  left: -10px
+  padding: 10px
+  display: none
+
+.site-header__locale-switcher__link
+  +inline-block
+  +heading-font-family
+  color: white
+
+  &.is-active
+    color: $primary-color
+
+.site-header__locale-switcher__button
+  display: none
+  color: white
+  &.is-active
+    display: block
+
+.site-header__logo img
+  width: 200px
+
+.site-header__main-nav
+  display: none
+  text-align: center
+
+.site-header__main-nav__item
+  +inline-block
+  a
+    color: white
+
++at-breakpoint(desk)
+  .site-header__hamburger
+    display: none
+
+  .site-header__logo
+    display: block
+
+  .site-header__locale-switcher
+    display: block
+    flex-basis: 100px
+
+  .site-header__main-nav
+    display: block
+    width: 100%

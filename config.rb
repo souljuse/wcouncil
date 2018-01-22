@@ -38,8 +38,8 @@ dato.home
 
 dato.releases.each do |release|
   proxy(
-    '/releases/#{release.slug}.html',
-    '/templates/release.html',
+    "/releases/#{release.slug}.html",
+    "/templates/release.html",
     locals: { release: release }
   )
 end

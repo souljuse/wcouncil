@@ -1,0 +1,14 @@
+- html_class ||= nil
+
+nav.site-header class=(yield_content :nav_html_class)
+  .wrap
+    .site-header__inner
+      = link_to "/", class: "site-header__logo" do
+        = image_tag 'logo.png'
+
+      = link_to "#",
+        class: "site-header__hamburger js-nav-toggler" do
+          i.icon--hamburger
+
+      = partial "partials/main-nav",
+        locals: {html_class: "site-header__main-nav"}

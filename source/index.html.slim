@@ -1,6 +1,4 @@
 - page = dato.home
-
-.wrap
-  div= "#{page.title}"
-  - page.releases.each do |release| 
+.home: .wrap
+  - page.last_releases.each do |release|
     div= "#{release.title}"
