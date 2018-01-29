@@ -1,4 +1,8 @@
 - page = dato.home
 .home: .wrap
   - page.last_releases.each do |release|
-    div= "#{release.title}"
+    .home__overlay: .wrap
+      .home__title releases
+      .home__release__title= "#{release.title}"
+      .home__release__subtitle Available on
+      .home__release__links= "#{release.links}"
