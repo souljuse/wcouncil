@@ -1,8 +1,22 @@
 - page = dato.home
+- main_release = dato.home.last_releases[0]
 .home: .wrap
-  - page.last_releases.each do |release|
-    .home__overlay: .wrap
-      .home__title releases
-      .home__release__title= "#{release.title}"
-      .home__release__subtitle Available on
-      .home__release__links= "#{release.links}"
+  .block-flag
+    .grid--wide.grid--middle
+      .grid__item.tab-8-12.desk-6-12: .block-flag__container
+        .home__release__last Last release
+        .home__release__title= "#{main_release.artista.name} - #{main_release.title}"
+        .home__release__subtitle Available on
+        / = link_to release.listen.soundcloud class: "home__release__links"
+
+      .grid__item.tab-4-12.desk-6-12
+        .block-flag__image
+          - if main_release.cover.present?
+            = image_tag main_release.cover.url(w: '600', h: '600', fit: 'crop', crop: 'faces')
+
+.wrap
+  .home__subtitle Previous Releases
+  .home__release__others
+    - page.last_releases.each do |release|
+      - if release.cover.present?
+        .home__release__others= image_tag release.cover.url(w: '300', h: '300', fit: 'crop', crop: 'faces')

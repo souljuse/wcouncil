@@ -1,0 +1,51 @@
+.block-flag
+  display: block
+  text-decoration: none
+  color: white
+  +margin-bottom(4)
+
+  &:last-child
+    margin-bottom: 0
+
+  &.has-link
+    cursor: pointer
+
+.block-flag__container
+  +margin-top(3)
+
+.block-flag__image img
+
+.block-flag__image-purchase
+  text-align: right
+
+.block-flag__title
+  +heading-font-family
+  +font-size(gamma)
+  +margin-bottom(1)
+  line-height: 34px
+
+.block-flag__subtitle
+  +margin-bottom(1)
+  +font-size(delta)
+
+.block-flag__text
+
+.block-flag__tag
+  +vertical-padding(0.5)
+  +horizontal-padding(1)
+  border-radius: 10px
+  +margin-right(0.5)
+
++at-breakpoint(tab)
+  .block-flag
+    +margin-bottom(5)
+
+  .block-flag__container
+    margin-top: 0
+
++at-breakpoint(desk)
+  .block-flag
+    +margin-bottom(8)
+
+  .block-flag__container
+    margin-top: 0

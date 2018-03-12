@@ -1,6 +1,20 @@
 .home
+  width: 100%
+  background-color: rgba(white, 0.2)
+  color: white
 
-.home__title
+.home__release__others__container
+  display: flex
+
+.home__release__others
+  height: 200px
+  width: 200px
+  border: 2px solid grey
+
+.home__subtitle
+  +vertical-padding(3)
+  color: white
+
 
 .home__overlay
   width: 100%
@@ -11,6 +25,10 @@
   text-transform: uppercase
 
 .home__release__subtitle
+  +font-size('gamma')
+  text-transform: uppercase
+
+.home__release__last
   +font-size('gamma')
   text-transform: uppercase
 
